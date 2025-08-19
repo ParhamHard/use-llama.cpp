@@ -1,0 +1,20 @@
+# AI Room Project Dependencies
+
+# Core AI/ML libraries
+llama-cpp-python>=0.3.16
+torch>=2.2.0,<3.0.0
+numpy>=1.25.0,<2.0.0
+openai>=1.0.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+pylint>=2.0.0
+mypy>=1.0.0
+pre-commit>=3.0.0
+
+# Documentation
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.0.0
+myst-parser>=1.0.0

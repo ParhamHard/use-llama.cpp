@@ -1,0 +1,25 @@
+# AI Room Project Dependencies
+
+# Core AI/ML libraries
+llama-cpp-python>=0.3.16
+openai>=1.0.0
+numpy>=1.25.0,<2.0.0
+
+# Jupyter and notebook support
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=6.0.0
+
+# Utility libraries
+diskcache>=5.6.1
+jinja2>=2.11.3
+MarkupSafe>=2.0.0
+
+# Development and formatting
+black>=22.0.0
+pylint>=2.0.0
+pytest>=7.0.0
+
+# PyTorch for GPU acceleration (required for llama-cpp-scripts)
+torch>=2.2.0,<3.0.0
+# transformers>=4.0.0  # Uncomment if using Hugging Face models

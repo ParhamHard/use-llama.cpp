@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  use-llama-cpp:
+    build: .
+    container_name: use-llama-cpp-gpu
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      # Mount your models directory
+      - ./models:/app/models
+      # Mount the project directory for development
+      - ./oldfuck:/app
+      # Optional: mount a specific model file
+      # - /path/to/your/model.gguf:/app/models/model.gguf
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  # Optional: Add a development service without GPU for testing
+  use-llama-cpp-dev:
+    build: .
+    container_name: use-llama-cpp-dev
+    volumes:
+      - ./oldfuck:/app
+      - ./models:/app/models
+    ports:
+      - "8001:8000"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=none
+    command: ["python", "main.py"]
+    profiles:
+      - dev
