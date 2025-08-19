@@ -206,12 +206,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) - Python bindings
 - [PyTorch](https://pytorch.org/) - GPU acceleration support
 
-## 📞 Support
-
-- 📧 Email: parham@example.com
-- 🐛 Issues: [GitHub Issues](https://github.com/parhamhard/use-llama.cpp/issues)
-- 📚 Documentation: [Read the Docs](https://use-llama-cpp.readthedocs.io/)
-- 💬 Discussions: [GitHub Discussions](https://github.com/parhamhard/use-llama.cpp/discussions)
 
 ---
 
