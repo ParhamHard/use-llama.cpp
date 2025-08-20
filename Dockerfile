@@ -40,13 +40,13 @@ RUN python -m pip install --upgrade pip setuptools wheel
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Install PyTorch with CUDA support
-RUN pip install --no-cache-dir torch>=2.2.0,<3.0.0 --index-url https://download.pytorch.org/whl/cu121
+RUN pip install "torch>=2.2.0,<3.0.0" --index-url https://download.pytorch.org/whl/cu121
 
 # Install llama-cpp-python with GPU support
-RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on -DLLAMA_CUDA_F16=on" pip install --no-cache-dir llama-cpp-python>=0.3.16
+RUN CMAKE_ARGS="-DLLAMA_CUBLAS=on -DLLAMA_CUDA_F16=on" pip install llama-cpp-python>=0.3.16
 
 # Copy project files
 COPY . .
